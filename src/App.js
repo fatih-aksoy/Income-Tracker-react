@@ -14,6 +14,7 @@ function App() {
     setTotalIncome(total);
   });
 
+  //! 1
   function deleteItem(id) {
     const newArr = income.filter((item) => item.id !== id);
     setIncome(newArr);
@@ -39,4 +40,6 @@ function App() {
 
 export default App;
 
-//! bixim incomleramiz array olacak
+//! bizim incomleramiz array olacak
+
+//! 1 - ben silme islemi icin burada income i filter layacagim. filter ladigimi const newArr icine atacagim. bu islemde, item.id !== id,  unlem isaretini kaldirip sadece == yazsaydim, sadece o id yi alirdi, onu alirdi digeleri silinirdi. unlem yazarak bunu alma, bunun disindakileri al diyorum.

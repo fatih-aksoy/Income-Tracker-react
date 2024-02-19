@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 
 const IncomeForm = ({ income, setIncome }) => {
+  //! 1
   const desc = useRef(null);
-  const date = useRef(null);
   const price = useRef(null);
+  const date = useRef(null);
 
   const AddIncome = (e) => {
     e.preventDefault();
+    //! 2
     setIncome([
       ...income,
       {
@@ -56,3 +58,7 @@ export default IncomeForm;
 
 //! burada useRef kullandik fakar useRef nedir?
 //! e.preventDefault() sayfa kendini yenilemesin diye
+
+//! 1 - burada girdigimiz const useRef degerleri ile asagida girdigimiz ref={desc}, ref={price}, ref={date} degeleri ile birebir.
+
+//! 2 - buradaki res operatöru ile [...income], daha once eger varsa bizim income da bir obje, onu da al demektir. ve sonrasinda ustune bir obje daha ekle. sen bu objeye id ver cunku silme islemi yapacagiz. bir diger husus desc: desc.current.value ise bizim aslinda input a girdigimiz deger oluyor.
